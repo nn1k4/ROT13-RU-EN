@@ -11,21 +11,21 @@
 
 
 
- std::string encode(std::string source) {
+ std::wstring encode(std::wstring source) {
 
 	using namespace std;
 		
 
-		const char* v[] = { "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
-						"абвгдежзийклмнопрстуфхцчшщъыьэюя",
-						"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-						"abcdefghijklmnopqrstuvwxyz",
-						"0123456789",
+		const wchar_t* v[] = { L"АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ",
+						L"абвгдежзийклмнопрстуфхцчшщъыьэюя",
+						L"ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+						L"abcdefghijklmnopqrstuvwxyz",
+						L"0123456789",
 						 NULL
 
 		};
 
-		string out = "";
+		wstring out = L"";
 
 		for (auto const & c : source) {
 
@@ -34,7 +34,7 @@
 
 			while (v[i] != '\0') {
 
-				string str = v[i];
+				wstring str = v[i];
 				unsigned short p = 0;            // the position of the cursor in the array row v 
 				unsigned short l = str.size();   // string length from array v
 

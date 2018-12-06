@@ -127,13 +127,13 @@ namespace rot13 {
 		// This code is executed when clicking on the button btnCode
 
 
-		System::String^ stdString = txtBox->Text;  // Get the text from the text field txtBox
+		System::String^ stdWstring = txtBox->Text;  // Get the text from the text field txtBox
 			
 
 
 		msclr::interop::marshal_context context;  //  Get the marshal_context
-		std::string stdString1 = context.marshal_as<std::string>(stdString);  // Convert type System::String^ to type std::string
-		txtBox->Text = context.marshal_as<System::String^>(encode(stdString1)); // Get the value of the function and convert type std::string to  type System::String^
+		std::wstring stdWstring1 = context.marshal_as<std::wstring>(stdWstring);  // Convert type System::String^ to type std::wstring
+		txtBox->Text = context.marshal_as<System::String^>(encode(stdWstring1)); // Get the value of the function and convert type std::wstring to  type System::String^
 
 
 	}
